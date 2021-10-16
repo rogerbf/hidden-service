@@ -1,0 +1,53 @@
+{
+  "name": "hidden-service",
+  "version": "1.0.0",
+  "description": "Spin up a hidden service",
+  "type": "module",
+  "engines": {
+    "node": ">=15.0.0"
+  },
+  "main": "source/index.js",
+  "files": [
+    "source"
+  ],
+  "scripts": {
+    "format": "prettier --write '**/*.js'",
+    "lint": "eslint --fix .",
+    "test": "ava",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "tor",
+    "hidden service",
+    "onion"
+  ],
+  "author": "Roger Berg Falk <roger@bergfa.lk>",
+  "license": "MIT",
+  "dependencies": {
+    "hi-base32": "0.5.1",
+    "js-sha3": "0.8.0",
+    "noble-ed25519": "1.2.6"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "13.2.1",
+    "@commitlint/config-conventional": "13.2.0",
+    "ava": "3.15.0",
+    "eslint": "8.0.1",
+    "esm": "3.2.25",
+    "husky": "7.0.0",
+    "prettier": "2.4.1"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerbf/hidden-service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogerbf/hidden-service/issues"
+  },
+  "homepage": "https://github.com/rogerbf/hidden-service#readme"
+}
