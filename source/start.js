@@ -1,3 +1,8 @@
+/**
+ * @typedef {import("child_process").ChildProcess} ChildProcess
+ * @typedef {import("./keys.js").PrivateKey} PrivateKey
+ */
+
 import { spawn } from "child_process"
 import { chmod, mkdtemp, readFile, writeFile } from "fs/promises"
 import { tmpdir } from "os"
@@ -5,6 +10,13 @@ import { join } from "path"
 import { hiddenServicePort } from "./hidden-service-port.js"
 import { getSecretKey } from "./keys.js"
 
+/**
+ * @param {object} [options]
+ * @param {object|number} options.port
+ * @param {PrivateKey} [options.privateKey] 32 byte Ed25519 private key
+ *
+ * @returns {Promise<{tor: ChildProcess, hostname: string, hiddenServiceDirectory: string}>}
+ */
 const start = async ({ port, privateKey } = { port: 80 }) => {
   const hiddenServiceDirectory = await mkdtemp(join(tmpdir(), "hs-"))
 
