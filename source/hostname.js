@@ -1,3 +1,7 @@
+/**
+ * @typedef {import("./keys.js").PublicKey} PublicKey
+ */
+
 import base32 from "hi-base32"
 import hash from "js-sha3"
 
@@ -9,6 +13,10 @@ const checksumPrefix = new Uint8Array([
   46, 111, 110, 105, 111, 110, 32, 99, 104, 101, 99, 107, 115, 117, 109,
 ]) // ".onion checksum"
 
+/**
+ * @param {PublicKey} publicKey 32 bytes
+ * @returns {Uint8Array} 2 byte checksum
+ */
 const calculateChecksum = (publicKey) => {
   const hashInput = new Uint8Array(48)
 
@@ -21,6 +29,10 @@ const calculateChecksum = (publicKey) => {
   return hash.slice(0, 2)
 }
 
+/**
+ * @param {PublicKey|Uint8Array} publicKey 32 bytes/64 byte (prefixed) publicKey
+ * @returns {string}
+ */
 const getHostname = (publicKey) => {
   if (publicKey.length === 64) {
     publicKey = publicKey.slice(32)

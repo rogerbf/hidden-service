@@ -8,5 +8,13 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "valid-jsdoc": [
+      "error",
+      {
+        "requireReturnDescription": false,
+        "requireParamDescription": false
+      }
+    ]
+  }
 }
