@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "checkJs": true,
+    "allowJs": true,
+    "maxNodeModuleJsDepth": 1,
+    "allowSyntheticDefaultImports": true
+  },
+  "input": ["source"],
+  "exclude": ["types", "tests"]
+}
