@@ -1,10 +1,7 @@
 import test from "ava"
-import { getHostname } from "./hostname.js"
+import { getHostname } from "../source/hostname.js"
 
 test("returns the expected hostname using prefixed keys", (assert) => {
-  /**
-   * @type {Array<[import("./keys.js").PublicKey, string]>}
-   */
   const publicKeyWithExpectedHostname = [
     [
       new Uint8Array([

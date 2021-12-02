@@ -1,5 +1,5 @@
 import test from "ava"
-import { hiddenServicePort } from "./hidden-service-port.js"
+import { hiddenServicePort } from "../source/hidden-service-port.js"
 
 const hiddenServicePortArg = "HiddenServicePort"
 

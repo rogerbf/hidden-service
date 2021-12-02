@@ -7,15 +7,18 @@
     "node": ">=15.0.0"
   },
   "main": "source/index.js",
+  "types": "types/index.d.ts",
   "files": [
-    "source"
+    "source",
+    "types"
   ],
   "scripts": {
     "format": "prettier --write '**/*.js'",
     "lint": "eslint --fix .",
-    "check": "tsc --project jsconfig.json",
+    "check": "tsc",
+    "types": "tsc --noEmit false --declaration --emitDeclarationOnly --declarationDir types",
     "test": "ava",
-    "prepare": "husky install"
+    "prepare": "husky install && npm run types"
   },
   "keywords": [
     "tor",
