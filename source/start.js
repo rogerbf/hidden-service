@@ -3,10 +3,10 @@
  * @typedef {import("./keys.js").PrivateKey} PrivateKey
  */
 
-import { spawn } from "child_process"
-import { chmod, mkdtemp, readFile, writeFile } from "fs/promises"
-import { tmpdir } from "os"
-import { join } from "path"
+import { spawn } from "node:child_process"
+import { chmod, mkdtemp, readFile, writeFile } from "node:fs/promises"
+import { tmpdir } from "node:os"
+import { join } from "node:path"
 import { hiddenServicePort } from "./hidden-service-port.js"
 import { getSecretKey } from "./keys.js"
 
